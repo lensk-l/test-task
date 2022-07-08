@@ -1,1 +1,0 @@
-export const LOCALES = {    RUSSIAN: 'ru',    UKRAINIAN: 'ua',}

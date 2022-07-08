@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "build": "npm run i18n && next build",
+    "start": "next start",
+    "extract:i18n": "formatjs extract '{pages,components,sections}/**/*.{js,ts,tsx}' --format simple --id-interpolation-pattern '[sha512:contenthash:base64:6]' --out-file content/locales/en.json",
+    "compile:i18n": "formatjs compile-folder --ast --format simple content/locales content/compiled-locales",
+    "i18n": "npm run extract:i18n && npm run compile:i18n"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +22,7 @@
     "node-fetch": "^2.6.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-intl": "^6.0.5",
     "react-redux": "^8.0.2",
     "react-select": "^5.3.2",
     "redux": "^4.2.0",
@@ -26,6 +30,7 @@
     "styled-components": "^5.3.5"
   },
   "devDependencies": {
+    "@formatjs/cli": "^5.0.2",
     "babel-plugin-formatjs": "^10.3.25",
     "babel-plugin-styled-components": "^2.0.7"
   }
