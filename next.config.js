@@ -1,1 +1,1 @@
-module.exports = {    i18n: {        locales: ['uk', 'ru'],        defaultLocale: 'uk',        localeDetection: false    }}
+module.exports = {    i18n: {        locales: ['ua', 'ru'],        defaultLocale: 'ua',        localeDetection: false    }}
